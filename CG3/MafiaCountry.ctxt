@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=MafiaCountry
+comment0.text=\n\ Write\ a\ description\ of\ class\ MafiaCountry\ here.\n\n\ @author\ Kristian\ Pedersen\n\ @version\ 25-11-24\n
+comment1.params=name
+comment1.target=MafiaCountry(java.lang.String)
+comment1.text=\n\ Constructor\ klassen\ nedarver\ strengen\ name\ der\ beskriver\ landets\ navn\ fra\ superklassen\n
+comment2.params=value
+comment2.target=int\ bonus(int)
+comment2.text=\n\ En\ modificering\ af\ superklassens\ bonus\ metode\ hvor\ spilleren\ har\ en\ 20%\ risiko\ for\ at\ blive\ ber\u00F8vet.\ Ellers\ kalder\ den\ blot\ supermetoden.\n\n\ @param\ value\ Parameteren\ value\ benyttes\ kun\ hvis\ r\u00F8veriet\ ikke\ finder\ sted\ og\ super.bonus\ metoden\ skal\ kaldes.\n\ @return\ Hvis\ r\u00F8veriet\ findet\ sted\ returneres\ spillerens\ tab.\ Hvis\ ikke\ returneres\ spillerens\ bonus\ ved\ at\ k\u00F8re\ superklassens\ bonus()\ metode.\n
+numComments=3

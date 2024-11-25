@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=CapitalCityTest
+comment0.text=\n\ The\ test\ class\ CapitalCityTest.\n\n\ @author\ \ Kristian\ Pedersen\n\ @version\ 25-11-24\n
+comment1.params=
+comment1.target=void\ arriveFromOtherCountry()
+comment2.params=
+comment2.target=void\ arriveFromSameCountry()
+comment3.params=
+comment3.target=void\ setUp()
+comment4.params=
+comment4.target=void\ tearDown()
+comment4.text=\n\ Tears\ down\ the\ test\ fixture.\n\n\ Called\ after\ every\ test\ case\ method.\n
+numComments=5

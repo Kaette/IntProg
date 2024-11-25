@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=CapitalCity
+comment0.text=\n\ Write\ a\ description\ of\ class\ CapitalCity\ here.\n\n\ @author\ Kristian\ Pedersen\n\ @version\ 25-11-24\n
+comment1.params=name\ value\ country
+comment1.target=CapitalCity(java.lang.String,\ int,\ Country)
+comment1.text=\n\ Nedarver\ variabler\ fra\ superklasserne\n
+comment2.params=p
+comment2.target=int\ arrive(Player)
+comment2.text=\n\ Denne\ metode\ overskriver\ arrive\ metoden\ i\ BorderCity\ og\ tilf\u00F8jer\ funktionalitet\ hvor\ spilleren\ fratr\u00E6kkes\ en\ m\u00E6ngde\ penge\ der\ s\u00E5\ l\u00E6gges\ til\ byens\ v\u00E6rdi\n\n\ @param\ \ Player\ p\ Tager\ et\ player\ objekt\n\ @return\ Der\ returneres\ v\u00E6rdien\ fra\ supermetoden\ med\ m\u00E6ngden\ af\ penge\ trukket\ fra\n
+numComments=3

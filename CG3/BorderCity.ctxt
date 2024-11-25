@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=BorderCity
+comment0.text=\n\ Write\ a\ description\ of\ class\ BorderCity\ here.\n\n\ @author\ Kristian\ Pedersen\n\ @version\ 25-11-24\n
+comment1.params=name\ value\ country
+comment1.target=BorderCity(java.lang.String,\ int,\ Country)
+comment1.text=\n\ Constructor\ klassen\ nedarver\ sine\ variabler\ fra\ superklassen\n
+comment2.params=p
+comment2.target=int\ arrive(Player)
+comment2.text=\n\ En\ nedarvning\ af\ arrive\ metoden\ fra\ superklassen\ der\ fratr\u00E6kker\ told\ fra\ den\ udbetalte\ bonus\ hvis\ spilleren\ kommer\ fra\ et\ andet\ land.\ Ellers\ g\u00F8r\ den\ det\ samme\ som\ i\ superklassen.\n\ \n\ @param\ Player\ p\ Tager\ et\ Player\ objekt\ og\ bruger\ det\ til\ \n\ @return\ Hvis\ spilleren\ ankommer\ fra\ et\ andet\ land\ returneres\ bonussen\ med\ den\ betale\ told\ fratrukket.\ Ellers\ returneres\ bonussen\ bare\n
+numComments=3
