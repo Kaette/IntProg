@@ -404,8 +404,6 @@ public class GUI {
         KeyEvent.VK_O, CTRL_SHIFT ));
         optionsItem.addActionListener( e -> optionsButton.doClick());
         
-        gameMenu.addSeparator();
-        
         //Speed Menuen
         JMenu speedMenu = new JMenu("Set Speed");
         
