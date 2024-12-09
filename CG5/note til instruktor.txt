@@ -1,0 +1,1 @@
+Der er en fejl hvor bilen ikke altid tegnes, men har snakket med en instruktor der har fortalt mig koden er rigtig og det blot er en fejl i programmet

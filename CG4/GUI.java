@@ -370,7 +370,10 @@ public class GUI {
         mainFrame.repaint();
     }
     
-    //Fatter ikke hvad der foregår
+    /**
+     * Adds the menubar at the top of the window. Includes keyboard shortcuts
+     * @return A menu object that gets displayed in the GUI method
+     */
     public JMenuBar createMenuBar(){
         JMenuBar menu = new JMenuBar();
         JMenu gameMenu = new JMenu("Game");
@@ -403,6 +406,8 @@ public class GUI {
         optionsItem.setAccelerator(KeyStroke.getKeyStroke(
         KeyEvent.VK_O, CTRL_SHIFT ));
         optionsItem.addActionListener( e -> optionsButton.doClick());
+        
+        gameMenu.addSeparator();
         
         //Speed Menuen
         JMenu speedMenu = new JMenu("Set Speed");
@@ -611,7 +616,7 @@ public class GUI {
         
         //Text input
         JPanel tollAndRobberyPanel = new JPanel();
-        tollAndRobberyPanel.setLayout(new GridLayout(4,3,5,5));                     
+        tollAndRobberyPanel.setLayout(new GridLayout(4,2,5,5));                     
         
         //Toll size
         JLabel tollSizeLabel = new JLabel("Toll to be paid:");
@@ -647,7 +652,7 @@ public class GUI {
         JLabel maxLabel = new JLabel("Max. loss when robbed");
         tollAndRobberyPanel.add(maxLabel);
         
-        maxLossTextField = new JTextField("50", 50);
+        maxLossTextField = new JTextField("50", 10);
         tollAndRobberyPanel.add(maxLossTextField);
         
         JLabel moneyMax = new JLabel("€ in [0,100]");

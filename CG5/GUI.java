@@ -12,7 +12,6 @@ import javax.swing.*;
 import javax.swing.Timer;
 import javax.swing.border.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
-
 /**
  * A GUI written in Java Swing which wraps around a Game instance.
  * Is used to get a graphical view of the data in a Game.
@@ -187,9 +186,6 @@ public class GUI {
         mainFrame.setResizable(false);
         mainFrame.setContentPane(superpanel);
         mainFrame.setVisible(true);
-        
-        //JMenu
-        
         
         panel.requestFocusInWindow();
         KeyListener kl = new KeyListener(){
@@ -370,7 +366,13 @@ public class GUI {
         mainFrame.repaint();
     }
     
-    //Fatter ikke hvad der foregår
+    /**
+     * Laver en menubar med samme funktionalitet som knapperne i bunden.
+     * Knapperne klikker blot på knapperne i bunden for at sikre at de har den samme funktionalitet.
+     * Inkluderer tastaturgenveje
+     * 
+     * @return Et menuBar objekt
+     */
     public JMenuBar createMenuBar(){
         JMenuBar menu = new JMenuBar();
         JMenu gameMenu = new JMenu("Game");
@@ -453,6 +455,51 @@ public class GUI {
     }
     
     /**
+     * Gemmer spillet som en tekstfil. Sikrer at der ikke er exceptions eller brugeren anullerer. Returnerer en succes besked hvis operationen lykkes.
+     */
+    public void saveLog(){
+        fileChooser.setDialogTitle("Choose save location");
+        int log = fileChooser.showSaveDialog(mainFrame);
+        
+        if(log == JFileChooser.APPROVE_OPTION){
+            File file = fileChooser.getSelectedFile();
+            System.out.println("Save as file: " + file.getAbsolutePath());
+            try (ObjectOutputStream stream = new ObjectOutputStream(new FileOutputStream(file))){
+                stream.writeObject(game.getLog());
+                JOptionPane.showMessageDialog(null, "Object has been successfully saved to " + file.getAbsolutePath(), "Success", JOptionPane.INFORMATION_MESSAGE);
+            } catch (IOException e){
+                e.printStackTrace();
+                JOptionPane.showMessageDialog(null, "Failed to save log. Exception occured" + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        }else{
+            System.out.println("Save operation cancelled by user");
+        }
+    }
+    
+    /**
+     * Virker ligesom metoden ovenfor, henter blot i stedet for at gemme. Her tjekkes også for ClassNotFoundException
+     */
+    public void playLog(){
+        fileChooser.setDialogTitle("Choose file to load");
+        int log = fileChooser.showOpenDialog(mainFrame);
+        
+        if(log == JFileChooser.APPROVE_OPTION){
+            File file = fileChooser.getSelectedFile();
+            System.out.println("Load savefile: " + file.getAbsolutePath());
+            try (ObjectInputStream stream = new ObjectInputStream(new FileInputStream(file))){
+                Log playLog = (Log) stream.readObject();
+                JOptionPane.showMessageDialog(null, "Log succesfully loaded " + file.getAbsolutePath(), "Success", JOptionPane.INFORMATION_MESSAGE);
+                game.playLog(playLog);
+            } catch (IOException | ClassNotFoundException e){
+                e.printStackTrace();
+                JOptionPane.showMessageDialog(null, "Failed to load log. Exception occured" + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        }else{
+            System.out.println("Load operation cancelled by user");
+        }
+    }
+    
+    /**
      * Creates the JPanel which contains the buttons in the bottom of the GUI
      * @return A JPanel containing some buttons to control the game
      */
@@ -490,11 +537,11 @@ public class GUI {
         buttons.add(optionsButton);
         
         playLogButton = new JButton("Play log...");
-        playLogButton.addActionListener(e -> testPlayButton());
+        playLogButton.addActionListener(e -> playLog());
         buttons.add(playLogButton);
         
         saveLogButton = new JButton("Save log...");
-        saveLogButton.addActionListener(e -> testSaveButton());
+        saveLogButton.addActionListener(e -> saveLog());
         buttons.add(saveLogButton);
         
         //Return the JPanel
